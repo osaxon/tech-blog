@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-gray-900 leading-tight">
 
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,11 @@
     <title>Tech Blog</title>
 </head>
 
-<body>
+<body class="min-h-screen bg-gray-100">
 
-    <header>
-        <h1>Tech Blog</h1>
-        <nav>
+    <header class="flex flex-row bg-green-200">
+        <h1 class="font-serif text-5xl p-4 tracking-wide flex-shrink" >Tech Blog...</h1>
+        <nav class="p-2 flex-grow text-right pt-6" >
             <a href="/">Home</a>
             <a href="/dashboard">Dashboard</a>
             <a href="/login">Login</a>
@@ -23,7 +23,7 @@
 
 
     <main>
-        <div class="main">
+        <div class="container mx-auto">
             {{{body}}}
         </div>
     </main>
