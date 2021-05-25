@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-User.init(
+Post.init(
     // define columes
 
     // id primary key
@@ -22,7 +22,7 @@ User.init(
         },
 
         post: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(500),
             allowNull: false,
         },
 
@@ -36,7 +36,7 @@ User.init(
     },
 
     {
-        sequelize,
+        sequelize: sequelize,
         freezeTableName: true,
         modelName: 'post',
     }

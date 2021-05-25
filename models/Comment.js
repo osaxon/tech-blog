@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model {}
 
-User.init(
+Comment.init(
     // define columes
 
     // id
@@ -36,7 +36,7 @@ User.init(
     },
 
     {
-        sequelize,
+        sequelize: sequelize,
         freezeTableName: true,
         modelName: 'comment',
     }
