@@ -1,8 +1,8 @@
-const router = require('express').Router();
+const express = require('express')
+const router = express.Router();
+const apiRoutes = require('./api')
 //TO DO import models
 
-router.get('/', async (req, res) => {
-    res.render('homepage')
-})
+router.use('/api', apiRoutes);
 
 module.exports = router;
