@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color:darkgrey;
+    min-height: 8vw;
+    display: flex;
+}
+
+header > h1 {
+    padding: 5px;
+    border: orange;
+    border-radius: 10px;
+    background-color: darkolivegreen;
+}
+
+nav {
+    padding: 5px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: start;
+}
+
+nav > a {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: peachpuff;
+    list-style: none;
+    text-decoration: none;
+}
