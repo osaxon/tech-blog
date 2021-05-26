@@ -17,10 +17,6 @@ router.get('/:id', async (req, res) => {
             attributes: { exclude: ['password']}
         })
         res.status(200).json(userData)
-        if(!userdata){
-            res.status(404).json("User not found with this ID")
-        }
-        
     } catch (err) {
         res.status(500).json(err);
     }
