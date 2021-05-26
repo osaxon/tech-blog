@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router();
 const apiRoutes = require('./api')
-//TO DO import models
+const homeRoutes = require('./home-routes.js')
 
 router.use('/api', apiRoutes);
+router.use('/', homeRoutes)
 
 module.exports = router;
