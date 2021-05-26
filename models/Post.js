@@ -21,6 +21,11 @@ Post.init(
             primaryKey: true,
         },
 
+        title: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+        },
+
         post: {
             type: DataTypes.STRING(500),
             allowNull: false,

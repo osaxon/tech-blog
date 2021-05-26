@@ -3,9 +3,10 @@ const { User, Post, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
     try{
-        const userData = await User.findAll();
-        const users = userData.map((user) => user.get({ plain: true}))
-        res.render('homepage', {users})
+        const postData = await Post.findAll();
+        const posts = postData.map((post) => post.get({ plain: true}))
+        console.log(posts)
+        res.render('homepage', {posts})
     } catch (err) {
         res.status(500).json(err);
     }
