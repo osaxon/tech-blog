@@ -18,8 +18,9 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: "Incorrect email or password, please try again."})
             return;
         }
+        console.log("API login route: ", req.body.password, userData.email, userData.password)
 
-        const validPassword = await userData.checkPassword(req.params.password);
+        const validPassword = await userData.checkPassword(req.body.password);
 
         if(!validPassword) {
             res.status(400).json({ message: "Incorrect email or password, please try again."})
@@ -47,6 +48,22 @@ router.get('/:id', async (req, res) => {
         res.status(200).json(userData)
     } catch (err) {
         res.status(500).json(err);
+    }
+})
+
+router.post('/', async (req, res) => {
+    try {
+        const newUserData = await User.create({
+            user_name: req.body.user_name,
+            email: req.body.email,
+            password: req.body.password,
+        });
+
+        res.status(200).json(newUserData)
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
     }
 })
 

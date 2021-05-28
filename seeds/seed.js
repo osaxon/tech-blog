@@ -9,6 +9,7 @@ const seedDatabase = async () => {
 
     const users = await User.bulkCreate(userSeedData)
 
+
     for (const post of postSeedData) {
         const newPost = await Post.create({
             ...post,

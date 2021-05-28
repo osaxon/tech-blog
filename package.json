@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "seed": "node seeds/seed.js",
-    "build:css": "npx tailwindcss-cli@latest build src/style.css -o public/style.css"
+    "build:css": "npx tailwindcss-cli@latest build src/style.css -o public/style.css",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
