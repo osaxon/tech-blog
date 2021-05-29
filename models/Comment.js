@@ -18,6 +18,11 @@ Comment.init(
             primaryKey: true,
         },
 
+        comment: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+
         post_id: {
             type: DataTypes.INTEGER,
             references: {
