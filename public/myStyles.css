@@ -1,0 +1,10 @@
+.header {
+    background-image: url('./assets/Liquid-Cheese.svg');
+    background-size: cover;
+    min-height: 10vw;
+} 
+
+main {
+  background-image: url("./assets/Confetti-Doodles.svg");
+  background-attachment: fixed;
+}

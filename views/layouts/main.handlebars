@@ -5,25 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/headerStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/myStyles.css">
     <link rel="stylesheet" href="/style.css">
     <title>Tech Blog</title>
 </head>
 
 <body class="min-h-screen">
 
-    <header class="flex flex-row bg-indigo-50 text-gray-700 header">
-        <h1 class="font-serif text-4xl p-4 tracking-wide flex-shrink" >Tech Blog...</h1>
-        <nav class="p-2 flex-grow text-right pt-8" >
-            <a href="/">Home</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/login">Login</a>
-            <a href="/logout">Logout</a>
+
+    <header x-data="{ mobileMenuOpen : false }"
+        class="flex flex-wrap flex-row justify-between sm:w-full md:items-center md:space-x-4 bg-white py-6 px-6 relative header">
+        <a href="/">
+            <h1 class="title font-sans text-4xl text-gray-100 py-1 hover:underlinetracking-wide" style="font-family: 'Fredoka One', cursive;">Tech Blog...</h1>
+        </a>
+        <button @click="mobileMenuOpen = !mobileMenuOpen"
+            class="inline-block md:hidden w-8 h-8 bg-gray-200 text-gray-600 p-1">
+            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <nav class="absolute md:relative sm:w-full top-16 left-0 md:top-0 z-20 md:flex flex-col md:flex-row md:space-x-6 font-semibold w-full md:w-auto bg-white shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-0 md:p-0"
+            :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}" @click.away="mobileMenuOpen = false">
+            <a href="/" class="block py-1 text-gray-600 hover:underline">Home</a>
+            <a href="/dashboard" class="font-sans py-1 text-gray-600 hover:underline">Dashboard</a>
+            <a href="/login" class="font-sans py-1 text-gray-600 hover:underline">Login</a>
+            <a href="/logout" class="font-sans py-1 text-gray-600 hover:underline">Logout</a>
         </nav>
     </header>
 
 
-    <main class="p-8 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 bg-gray-100 min-h-screen">
+    <main class="p-8 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4 bg-gray-100 min-h-screen">
         {{{body}}}
     </main>
 
@@ -31,7 +46,7 @@
 
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
 
 </html>
