@@ -11,12 +11,16 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get({ plain: true}))
         res.render('homepage', {posts})
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({...err});
     }
 })
 
 router.get('/login', (req, res) => {
     res.render('login')
+})
+
+router.get('/signup', (req, res) => {
+    res.render('sign-up')
 })
 
 module.exports = router;
