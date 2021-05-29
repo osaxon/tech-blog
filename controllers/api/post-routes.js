@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
+const withAuth = require('../../utils/auth')
 
 router.get("/", async (req, res) => {
   try {
@@ -52,5 +53,24 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.put('/:id', withAuth, async (req, res) => {
+    console.log(req.body)
+    try {
+        const postData = await Post.update(
+            {
+                title: req.body.title
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        );
+        res.status(200).json(postData)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router;
