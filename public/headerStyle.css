@@ -1,3 +1,5 @@
-.heade {
+.header {
     background-image: url('./assets/cartographer.png');
+    background-blend-mode: difference;
+    height: 10vw;
 }
