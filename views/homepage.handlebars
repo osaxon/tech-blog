@@ -1,12 +1,14 @@
-{{#each posts as |post|}}
+<section>
+    <h2>Homepage</h2>
+    <p>All blogs</p>
+</section>
 
-    <article class="bg-gray-50 rounded-lg shadow">
-        <header class="rounded-t-lg title">
-            <h2 class="=text-lg p-3 text-gray-800" style="font-family: 'Fredoka One', cursive;">{{post.title}}</h2>
-        </header>
-        <body class="">
-            <p class="rounded-b-lg p-3 leading-normal">{{post.post}}</p>
-        </body>
-    </article>
+<div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-4 bg-gray-100 grid-rows-2 min-h-screen">
 
-{{/each}}
+{{#if posts.length}}
+    {{#each posts as |post|}}
+        {{> post-detail post}}
+    {{/each}}
+{{/if}}
+
+</div>

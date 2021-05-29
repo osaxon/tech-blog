@@ -4,7 +4,9 @@
     min-height: 10vw;
 } 
 
-main {
-  background-image: url("./assets/Confetti-Doodles.svg");
-  background-attachment: fixed;
+
+
+.grid {
+    background-image: url("./assets/Confetti-Doodles.svg");
+    background-attachment: fixed;
 }
