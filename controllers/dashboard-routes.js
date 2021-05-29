@@ -15,9 +15,18 @@ router.get('/', withAuth, async (req, res) => {
             ],
             include: [
                 {
-                    model: Comment
+                  model: Comment,
+                  attributes: ["id", "comment", "post_id", "user_id"],
+                  include: {
+                    model: User,
+                    attributes: ["user_name"],
+                  }
+                },
+                {
+                    model: User,
+                    attributes: ['user_name']
                 }
-            ]
+              ],
         }); // TODO: find all posts for current logged in user
         const posts = postData.map((post) => post.get({ plain: true }))
         res.render('dashboard', { posts })

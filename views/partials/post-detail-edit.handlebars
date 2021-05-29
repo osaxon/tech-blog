@@ -1,0 +1,14 @@
+<article class="bg-gray-50 rounded-lg shadow post">
+    <header class="rounded-t-lg title">
+        <a class="rounded-b-lg p-4 leading-normal text-blue-400 hover:text-blue-100" href="/dashboard/edit/{{id}}">Edit post</a>
+        <h2 class="text-lg p-3 text-gray-800" style="font-family: 'Fredoka One', cursive;">{{title}}</h2>
+    </header>
+
+    <body class="">
+        <p class="rounded-b-lg p-3 leading-normal">{{post}}</p>
+        <p class="rounded-b-lg p-3 leading-normal">by {{user.user_name}}</p>
+        {{#if comments}}
+            {{> comment-detail comments}}
+        {{/if}}
+    </body>
+</article>
