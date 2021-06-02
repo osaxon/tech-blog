@@ -31,9 +31,9 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/edit/:id", withAuth, async (req, res) => {
+router.get("/edit/:id", async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
+    const postData = await Post.findOne({
         where: {
             id: req.params.id
         },
@@ -55,7 +55,8 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     }
     );
     const post = postData.get({ plain: true });
-    res.render("edit-post", {post} );
+    console.log(post)
+    res.render("edit-post", {post, logged_in: req.session.logged_in} );
   } catch (err) {
     res.status(400).json({...err});
   }

@@ -6,9 +6,9 @@ async function updatePostHandler(event) {
     const postID = document.querySelector(".post-id").textContent;
     console.log(postID)
   
-    if (post || password) {
-      const response = await fetch("/api/posts/" + postID, {
-        method: "POST",
+    if (post || title) {
+      const response = await fetch(`/api/posts/${postID}`, {
+        method: "PUT",
         body: JSON.stringify({ title: title, post: post }),
         headers: { "Content-Type": "application/json" },
       });
