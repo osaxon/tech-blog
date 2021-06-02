@@ -39,12 +39,12 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/new", async (req, res) => {
   try {
     const newPostData = await Post.create({
       title: req.body.title,
       post: req.body.post,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(newPostData);
